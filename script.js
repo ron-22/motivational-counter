@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     const counterElement = document.getElementById('counter');
     const button = document.getElementById('countButton');
     const messageElement = document.getElementById('message');
 
     const messages = [
         "Good job JoJo", "Proud of you hbb", "You’re rocking it", "You’re amazing",
-        "Noone is like you ever", "love yourself you’re smart", "I love you Jojo",
+        "No one is like you ever", "Love yourself, you’re smart", "I love you Jojo",
         "You’re so hardworking", "You’re a genius!!"
     ];
 
@@ -21,12 +21,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         messageElement.textContent = randomMessage;
 
         if (count % 50 === 0) {
-            messageElement.textContent = "Wow you’re so close to your goal";
+            messageElement.textContent = "Wow you’re so close to your goal!";
             confettiEffect();
         }
     });
 
     function confettiEffect() {
-        alert("Confetti effect placeholder!");
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        const confettiSettings = { target: canvas, width: window.innerWidth, height: window.innerHeight };
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    
+        setTimeout(() => {
+            confetti.clear(); // Stop the confetti after 5 seconds
+            document.body.removeChild(canvas); // Remove the canvas after use
+        }, 5000);
     }
+    
 });
