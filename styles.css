@@ -1,43 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+    animation: gradientBG 10s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
     text-align: center;
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .counter {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #ff6b6b;
 }
 
 .count-button {
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 20px 40px;
+    font-size: 22px;
     border: none;
-    border-radius: 10px;
-    background-color: #007BFF;
+    border-radius: 15px;
+    background-color: #ff6b6b;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.count-button:active {
+    transform: scale(0.9);
 }
 
 .count-button:hover {
-    background-color: #0056b3;
+    background-color: #ee5253;
 }
 
 .message {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #333;
+    margin-top: 30px;
+    font-size: 28px;
+    color: #2e2e2e;
 }
